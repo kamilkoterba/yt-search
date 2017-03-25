@@ -1,0 +1,11 @@
+.video_item__row {
+    padding: 10px 0;
+}
+
+.video_item__row:hover {
+    background: #eee;
+}
+
+.video_item__img {
+    max-width: 100%;
+}

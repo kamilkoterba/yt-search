@@ -1,8 +1,10 @@
 import React from "react";
 
+import VideoItem from "./VideoItem";
+
 const VideoList = ({ videos }) => (
     <div className="container-m">
-        { videos.length }
+        { videos.map((video) => <VideoItem key={ video.etag } video={ video } />) }
     </div>
 );
 
