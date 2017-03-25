@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function App() {
-    return <div>Hi</div>;
-}
+import SearchBar from "./components/SearchBar";
+
+const App = () => (
+    <div>
+        <SearchBar />
+    </div>
+);
+
+export default App;
