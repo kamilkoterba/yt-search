@@ -4,6 +4,8 @@ import YTSearch from "youtube-api-search";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 
+import "getbase/dist/css/styles.css";
+
 const API_KEY = "AIzaSyAUJJ2QvFRF4N-_EtIGAIy-0H4nT4UEFtI";
 
 class App extends React.Component {

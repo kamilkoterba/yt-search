@@ -1,7 +1,7 @@
 import React from "react";
 
 const VideoList = ({ videos }) => (
-    <div>
+    <div className="container-m">
         { videos.length }
     </div>
 );
