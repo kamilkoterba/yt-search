@@ -1,0 +1,16 @@
+.video_details__container {
+    height: 0;
+    margin: 15px 0;
+    padding-bottom: 30%;
+    position: relative;
+    width: 100%;
+}
+
+.video_details__iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
