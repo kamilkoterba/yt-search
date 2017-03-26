@@ -2,10 +2,14 @@ import React from "react";
 
 import "./VideoItem.css";
 
-const VideoItem = ({ video }) => (
-    <div className="clear video_item__row">
+const VideoItem = ({ video, onVideoSelect }) => (
+    <div className="clear video_item__row" onClick={ () => onVideoSelect(video) }>
         <div className="col-2">
-            <img className="video_item__img" src={ video.snippet.thumbnails.default.url } />
+            <img
+                alt={ video.snippet.title }
+                className="video_item__img"
+                src={ video.snippet.thumbnails.default.url }
+            />
         </div>
         <div className="col-10">
             { video.snippet.title }
