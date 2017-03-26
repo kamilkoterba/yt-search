@@ -1,4 +1,5 @@
 .video_item__row {
+    cursor: pointer;
     padding: 10px 0;
 }
 
