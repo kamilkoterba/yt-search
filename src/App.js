@@ -38,7 +38,6 @@ class App extends React.Component {
                 <SearchBar onSearch={ (term) => searchVideo(term) }/>
                 <VideoDetails video={ this.state.selectedVideo } />
                 <VideoList
-                    onVideoSelect={ (selectedVideo) => this.setState({ selectedVideo })}
                     videos={ this.state.videos } />
             </div>
         );

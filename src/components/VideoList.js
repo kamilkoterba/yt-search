@@ -8,7 +8,6 @@ const VideoList = ({ videos, onVideoSelect }) => (
             <VideoItem
                 key={ video.etag }
                 video={ video }
-                onVideoSelect={ onVideoSelect }
             />
         ) }
     </div>
