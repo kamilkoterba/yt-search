@@ -5,7 +5,7 @@ import { debounce } from "lodash";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetails from "./components/VideoDetails";
-import { browserHistory } from "react-router";
+import { Link, browserHistory } from "react-router";
 
 import "getbase/dist/css/styles.css";
 
@@ -48,6 +48,7 @@ class App extends React.Component {
                 <VideoList
                     onVideoSelect={ (selectedVideo) => this.selectVideo(selectedVideo) }
                     videos={ this.state.videos } />
+                <Link to="/contact">Contact us</Link>
             </div>
         );
     }
