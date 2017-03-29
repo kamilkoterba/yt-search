@@ -3,7 +3,7 @@ import React from "react";
 import "./VideoItem.css";
 
 const VideoItem = ({ video, onVideoSelect }) => (
-    <div className="clear video_item__row" onClick={ () => onVideoSelect(video) }>
+    <div className="clear video_item__row" onClick={ () => onVideoSelect(video.id.videoId) }>
         <div className="col-2">
             <img
                 alt={ video.snippet.title }

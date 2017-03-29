@@ -5,6 +5,7 @@ import { debounce } from "lodash";
 import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoDetails from "./components/VideoDetails";
+import { browserHistory } from "react-router";
 
 import "getbase/dist/css/styles.css";
 
@@ -16,18 +17,25 @@ class App extends React.Component {
 
         this.state = {
             videos: [],
-            selectedVideo: null
+            selectedVideo: props.params.videoId
         };
-        this.searchVideo(props.params.term || "volvo");
+        this.searchVideo("volvo", !props.params.videoId);
     }
 
-    searchVideo(term) {
+    searchVideo(term, shouldSelectVideo = true) {
         YTSearch({ key: API_KEY, term }, (videos) => {
             this.setState({
-                videos,
-                selectedVideo: videos[0]
+                videos
             });
+            shouldSelectVideo && this.selectVideo(videos[0].id.videoId);
         });
+    }
+
+    selectVideo(videoId) {
+        this.setState({
+            selectedVideo: videoId
+        });
+        browserHistory.push("/details/" + videoId)
     }
 
     render() {
@@ -35,10 +43,10 @@ class App extends React.Component {
 
         return (
             <div>
-                <SearchBar initialTerm={ this.props.params.term } onSearch={ (term) => searchVideo(term) }/>
-                <VideoDetails video={ this.state.selectedVideo } />
+                <SearchBar onSearch={ (term) => searchVideo(term) } />
+                <VideoDetails videoId={ this.state.selectedVideo } />
                 <VideoList
-                    onVideoSelect={ (selectedVideo) => this.setState({ selectedVideo })}
+                    onVideoSelect={ (selectedVideo) => this.selectVideo(selectedVideo) }
                     videos={ this.state.videos } />
             </div>
         );

@@ -6,7 +6,7 @@ import { Router, Route, browserHistory } from "react-router";
 ReactDOM.render(
     <Router history={ browserHistory }>
         <Route path="/" component={App}/>
-        <Route path="/search/:term" component={App}/>
+        <Route path="/details/:videoId" component={App}/>
     </Router>
     , document.getElementById("root")
 );

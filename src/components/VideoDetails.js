@@ -4,11 +4,11 @@ import "./VideoDetails.css";
 
 const URL = "https://www.youtube.com/embed";
 
-const VideoDetail = ({ video }) => (
+const VideoDetail = ({ videoId }) => (
     <div className="container-m video_details__container">
-        { !video
+        { !videoId
             ? "Loading..."
-            : <iframe src={ `${URL}/${video.id.videoId}` } className="video_details__iframe"></iframe>
+            : <iframe src={ `${URL}/${videoId}` } className="video_details__iframe"></iframe>
         }
     </div>
 );
