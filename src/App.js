@@ -18,7 +18,7 @@ class App extends React.Component {
             videos: [],
             selectedVideo: null
         };
-        this.searchVideo("volvo");
+        this.searchVideo(props.params.term || "volvo");
     }
 
     searchVideo(term) {
@@ -35,7 +35,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <SearchBar onSearch={ (term) => searchVideo(term) }/>
+                <SearchBar initialTerm={ this.props.params.term } onSearch={ (term) => searchVideo(term) }/>
                 <VideoDetails video={ this.state.selectedVideo } />
                 <VideoList
                     onVideoSelect={ (selectedVideo) => this.setState({ selectedVideo })}

@@ -5,7 +5,7 @@ import "./SearchBar.css";
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-        this.state = { term: "" };
+        this.state = { term: props.initialTerm };
     }
 
     onInputChange(term) {
